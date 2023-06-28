@@ -58,6 +58,10 @@ const Login = () => {
       <button className={styles.submitBtn} type="submit">
         Login
       </button>
+      <div className={styles.subtitle}>
+        <p>Tu n'as pas de compte ?</p>
+        <a href="/register">Créer un compte</a>
+      </div>
     </form>
   )
 }

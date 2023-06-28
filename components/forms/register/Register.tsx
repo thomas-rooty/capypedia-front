@@ -74,8 +74,12 @@ const Register = () => {
         onChange={handleChange}
       />
       <button className={styles.submitBtn} type="submit">
-        Créez votre compte
+        S'enregistrer
       </button>
+      <div className={styles.subtitle}>
+        <p>Vous avez déjà un compte ?</p>
+        <a href="/login">Se connecter</a>
+      </div>
     </form>
   )
 }
