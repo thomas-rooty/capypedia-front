@@ -4,8 +4,10 @@ import AllObservations from '@/components/observations/AllObservations'
 const ObservationsPage = () => {
   return (
     <div className={styles.container}>
-      <h1>Observations</h1>
       <AllObservations />
+      <header className={styles.header}>
+        <img src={'/images/header_blurred.png'} className={styles.headerImage} alt="Header background image" />
+      </header>
     </div>
   )
 }

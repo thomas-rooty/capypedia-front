@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+  margin: 1rem;
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin: 3rem;
+  justify-items: center;
+}
