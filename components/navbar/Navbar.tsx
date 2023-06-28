@@ -18,10 +18,10 @@ const Navbar = () => {
         <li className={pathname === '/' ? styles.active : ''}>
           <Link href="/">Home</Link>
         </li>
-        <li className={pathname === '/about' ? styles.active : ''}>
+        <li className={pathname === '/register' ? styles.active : ''}>
           <Link href="/register">S'enregistrer</Link>
         </li>
-        <li className={`${styles.login} ${pathname === '/login' ? styles.active : ''}`}>
+        <li className={`${styles.login} ${pathname === '/login' ? styles.activeLogin : ''}`}>
           <Link href="/login">Se connecter</Link>
         </li>
       </ul>
