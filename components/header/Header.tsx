@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 const Header = () => {
   return (
     <header className={styles.header}>
-      <img src={'/images/header.png'} className={styles.headerImage} alt="Header background image" />
+      <img src={'/images/header_blurred.png'} className={styles.headerImage} alt="Header background image" />
     </header>
   )
 }
