@@ -2,9 +2,23 @@
 import styles from './Navbar.module.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { getUserData, disconnectUser } from '@/utils/mutations/storageMutations'
+import { User } from '@/utils/types/User'
 
 const Navbar = () => {
   const pathname = usePathname()
+  const [user, setUser] = useState<User | null>(null)
+
+  useEffect(() => {
+    const { data } = getUserData()
+    setUser(data as User)
+  }, [])
+
+  const handleDisconnect = () => {
+    disconnectUser()
+    setUser(null)
+  }
 
   return (
     <nav className={styles.navbar}>
@@ -27,12 +41,25 @@ const Navbar = () => {
         <li className={pathname === '/education' ? styles.active : ''}>
           <Link href="/education">Education</Link>
         </li>
-        <li className={pathname === '/register' ? styles.active : ''}>
-          <Link href="/register">S'enregistrer</Link>
-        </li>
-        <li className={`${styles.login} ${pathname === '/login' ? styles.activeLogin : ''}`}>
-          <Link href="/login">Se connecter</Link>
-        </li>
+        {!user ? (
+          <>
+            <li className={pathname === '/register' ? styles.active : ''}>
+              <Link href="/register">S'enregistrer</Link>
+            </li>
+            <li className={`${styles.login} ${pathname === '/login' ? styles.activeLogin : ''}`}>
+              <Link href="/login">Se connecter</Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className={pathname === '/profile' ? styles.active : ''}>
+              <Link href="/profile">Profil</Link>
+            </li>
+            <li className={`${styles.login} ${styles.activeLogin}`} onClick={handleDisconnect}>
+              <Link href={'/login'}>Se déconnecter</Link>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   )
