@@ -40,3 +40,21 @@ export const getObservations = async () => {
   const response = await fetch(`${apiUrl}/observations/`)
   return response.json()
 }
+
+/**
+ * Add a new observation
+ * @param {Observation} observation
+ * @param token
+ * @returns {Promise<Observation>}
+ */
+export const addObservation = async (observation: Observation, token: string | null) => {
+  const response = await fetch(`${apiUrl}/observations/changes/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `token ${token}`,
+    },
+    body: JSON.stringify(observation),
+  })
+  return response.json()
+}
