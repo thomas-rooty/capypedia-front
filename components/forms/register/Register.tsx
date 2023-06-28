@@ -2,6 +2,7 @@ import styles from './Register.module.css'
 import { useState, useEffect } from 'react'
 import { User } from '@/utils/types/User'
 import { register } from '@/utils/apiUtils'
+import { setUserData } from '@/utils/mutations/storageMutations'
 
 const Register = () => {
   const [user, setUser] = useState<User>({
@@ -25,6 +26,8 @@ const Register = () => {
     const res = await register(user)
     if (res.status === 200) {
       setSuccess(true)
+      console.log(res)
+      setUserData(res)
     } else {
       setError(res.message)
     }
@@ -43,10 +46,36 @@ const Register = () => {
       <h1>Register</h1>
       {error && <p className={styles.error}>{error}</p>}
       {success && <p className={styles.success}>Successfully registered!</p>}
-      <input className={styles.input} required type="text" name="username" placeholder="Username" value={user.username} onChange={handleChange} />
-      <input className={styles.input} required type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} />
-      <input className={styles.input} required type="email" name="email" placeholder="Email" value={user.email} onChange={handleChange} />
-      <button className={styles.submitBtn} type="submit">Créez votre compte</button>
+      <input
+        className={styles.input}
+        required
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={user.username}
+        onChange={handleChange}
+      />
+      <input
+        className={styles.input}
+        required
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={user.password}
+        onChange={handleChange}
+      />
+      <input
+        className={styles.input}
+        required
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={user.email}
+        onChange={handleChange}
+      />
+      <button className={styles.submitBtn} type="submit">
+        Créez votre compte
+      </button>
     </form>
   )
 }
