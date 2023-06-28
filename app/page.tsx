@@ -1,10 +1,10 @@
 import styles from './page.module.css'
-import Header from '@/components/header/Header'
+import HeaderContent from '@/components/header/HeaderContent'
 
 const Home = () => {
   return (
     <main className={styles.main}>
-      <Header />
+      <HeaderContent />
     </main>
   )
 }

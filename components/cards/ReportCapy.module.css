@@ -1,0 +1,52 @@
+.container {
+  position: relative;
+  background: #d2c1ab;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 10px;
+  color: #4d4d4d;
+  font-family: "Lexend Regular", sans-serif;
+  width: 500px;
+  height: 145px;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.arrow {
+  position: absolute;
+  bottom: -1px;
+  animation: arrow .666s ease-in-out infinite alternate;
+}
+
+@keyframes arrow {
+  from {
+    right: 180px;
+  }
+  to {
+    right: 170px;
+  }
+}
+
+.reportCapyBtn {
+  position: absolute;
+  bottom: -10px;
+  right: -25px;
+  padding: 10px;
+  border: 2px solid #d2c1ab;
+  border-radius: 10px;
+  background: #f2f2f2;
+  color: #4d4d4d;
+  font-family: "Lexend Regular", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.reportCapyBtn:hover {
+  background: #d2c1ab;
+  color: #f2f2f2;
+  transform: scale(1.05);
+}

@@ -26,6 +26,8 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --bg-primary: #eae2d7;
 }
 
 /* Fonts */
@@ -33,6 +35,30 @@
   font-family: 'Montserrat Regular';
   src: url('/fonts/Montserrat-Regular.otf');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: url('/fonts/Montserrat-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Regular';
+  src: url('/fonts/Lexend-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Black';
+  src: url('/fonts/Lexend-Black.ttf');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }

@@ -1,0 +1,21 @@
+.capyWalking {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  animation: capyWalking 10s linear infinite;
+}
+
+/* Animation that makes capybara go from right to left */
+@keyframes capyWalking {
+  0% {
+    transform: translateX(110%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.capyGif {
+  width: 200px;
+  height: auto;
+}

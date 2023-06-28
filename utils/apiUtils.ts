@@ -48,7 +48,7 @@ export const getObservations = async () => {
  * @returns {Promise<Observation>}
  */
 export const addObservation = async (observation: Observation, token: string | null) => {
-  const response = await fetch(`${apiUrl}/observations/changes/`, {
+  const response = await fetch(`${apiUrl}/observations/changes`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
