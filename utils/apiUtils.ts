@@ -42,6 +42,16 @@ export const getObservations = async () => {
 }
 
 /**
+ * Get one observation
+ * @param {string} id
+ * @returns {Promise<Observation>}
+ */
+export const getObservation = async (id: string) => {
+  const response = await fetch(`${apiUrl}/observations/${id}`)
+  return response.json()
+}
+
+/**
  * Add a new observation
  * @param {Observation} observation
  * @param token
