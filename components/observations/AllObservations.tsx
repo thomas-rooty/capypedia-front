@@ -20,7 +20,6 @@ const AllObservations = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Observations</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (

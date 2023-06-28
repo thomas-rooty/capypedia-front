@@ -1,13 +1,54 @@
 .header {
   width: 100vw;
-  height: 100vh;
-  position: absolute;
+  height: 70vh;
+  position: relative;
   top: 0;
-  z-index: -1;
 }
 
 .headerImage {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  z-index: -1;
+}
+
+.headerContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-family: "Montserrat Regular", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonLink {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 1px solid transparent;
+  background-color: #ffb32e;
+  color: #fff;
+  border-radius: 5px;
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: 700;
+  transition: all .2s ease-in-out;
+}
+
+.buttonLink:hover {
+  background-color: #ffa500;
+  border: 1px solid #fff;
 }
