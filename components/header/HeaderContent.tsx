@@ -1,6 +1,5 @@
 import styles from './Header.module.css'
 import ReportCapy from '@/components/cards/ReportCapy'
-import CapyWalking from '@/components/capywalking/CapyWalking'
 
 const HeaderContent = () => {
   return (
@@ -14,7 +13,6 @@ const HeaderContent = () => {
         </p>
       </div>
       <ReportCapy />
-      <CapyWalking />
     </div>
   )
 }

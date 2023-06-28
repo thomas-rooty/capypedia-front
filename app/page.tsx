@@ -6,6 +6,7 @@ const Home = () => {
   return (
     <main className={styles.main}>
       <HeaderContent />
+      <CapyWalking />
     </main>
   )
 }
