@@ -16,7 +16,16 @@ const Navbar = () => {
       </div>
       <ul className={styles.navlinks}>
         <li className={pathname === '/' ? styles.active : ''}>
-          <Link href="/">Home</Link>
+          <Link href="/">Accueil</Link>
+        </li>
+        <li className={pathname === '/capybara' ? styles.active : ''}>
+          <Link href="https://fr.wikipedia.org/wiki/Hydrochoerus_hydrochaeris">Qu'est-ce qu'un capybara ?</Link>
+        </li>
+        <li className={pathname === '/alimentation' ? styles.active : ''}>
+          <Link href="/alimentation">Alimentation</Link>
+        </li>
+        <li className={pathname === '/education' ? styles.active : ''}>
+          <Link href="/education">Education</Link>
         </li>
         <li className={pathname === '/register' ? styles.active : ''}>
           <Link href="/register">S'enregistrer</Link>
