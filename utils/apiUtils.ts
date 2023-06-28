@@ -1,4 +1,5 @@
 import { User } from '@/utils/types/User'
+import { Observation } from '@/utils/types/Observation'
 
 const apiUrl = 'http://localhost:8000'
 
@@ -28,5 +29,14 @@ export const login = async (username: string, password: string) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
   })
+  return response.json()
+}
+
+/**
+ * Get all observations
+ * @returns {Promise<Observation[]>}
+ */
+export const getObservations = async () => {
+  const response = await fetch(`${apiUrl}/observations/`)
   return response.json()
 }
