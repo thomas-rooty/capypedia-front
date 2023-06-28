@@ -1,5 +1,6 @@
 .form {
   position: absolute;
+  background: #d2c1ab;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -8,16 +9,18 @@
   align-items: center;
   justify-content: center;
   width: 400px;
-  height: 65%;
-  background-color: white;
-  border-radius: 7px;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+  height: fit-content;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 5rem 5rem;
+  color: #4d4d4d;
 }
 
 .form > h1 {
-  font-family: "Montserrat Regular", sans-serif;
+  font-family: "Lexend Regular", sans-serif;
   margin-bottom: 2rem;
-  color: #282828;
+  color: #4d4d4d;
+  width: 100%;
 }
 
 .form > h1::after {
@@ -30,33 +33,31 @@
 }
 
 .input {
-  width: fit-content;
   height: 3rem;
   margin-bottom: 1rem;
   border: 1px solid #cbcbcb;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--bg-primary);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  font-family: "Montserrat Regular", sans-serif;
   font-size: 1rem;
   outline: none;
   color: #808080;
+  width: 100%;
 }
 
 .submitBtn {
-  width: fit-content;
   height: 3rem;
   margin-top: 1rem;
   border: none;
   background-color: rgb(255, 179, 46);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  font-family: "Montserrat Regular", sans-serif;
   font-size: 1rem;
   outline: none;
   cursor: pointer;
   text-transform: uppercase;
   color: #fff;
+  width: 100%;
 }
 
 .subtitle {
@@ -71,7 +72,7 @@
 }
 
 .subtitle > a {
-  color: #ffa500;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   margin-top: .5rem;
