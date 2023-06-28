@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <h1>Login</h1>
+      <h1>Se connecter</h1>
       {error && <p className={styles.error}>{error}</p>}
       <input
         className={styles.input}
@@ -56,7 +56,7 @@ const Login = () => {
         onChange={handleChange}
       />
       <button className={styles.submitBtn} type="submit">
-        Login
+        Se connecter
       </button>
       <div className={styles.subtitle}>
         <p>Tu n'as pas de compte ?</p>
