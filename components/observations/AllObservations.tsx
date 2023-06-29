@@ -10,12 +10,14 @@ const AllObservations = () => {
   const [role, setRole] = useState<string>('')
   const [observations, setObservations] = useState<Observation[]>([])
   const [loading, setLoading] = useState<boolean>(true)
+  const [token, setToken] = useState<string | null>('')
 
   // Check user role
   useEffect(() => {
     const fetchRole = async () => {
       const { token } = await getUserData()
       const res = await checkRole(token)
+      setToken(token)
       if (res.status === 401) {
         setRole('user')
       }
@@ -49,7 +51,7 @@ const AllObservations = () => {
       ) : (
         <div className={styles.grid}>
           {observations.map((observation) => (
-            <CardObservation observation={observation} key={observation.id} />
+            <CardObservation observation={observation} key={observation.id} isAdmin={role === 'admin'} token={token} />
           ))}
         </div>
       )}

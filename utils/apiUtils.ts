@@ -82,6 +82,24 @@ export const addObservation = async (observation: Observation, token: string | n
 }
 
 /**
+ * Edit an observation
+ * @param {Observation} observation
+ * @param token
+ * @returns {Promise<Observation>}
+ */
+export const editObservation = async (observation: Observation, token: string | null) => {
+  const response = await fetch(`${apiUrl}/observations/changes`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+    body: JSON.stringify(observation),
+  })
+  return response.json()
+}
+
+/**
  * Get all comments of an observation
  * @param {string} id
  * @returns {Promise<Comment[]>}
