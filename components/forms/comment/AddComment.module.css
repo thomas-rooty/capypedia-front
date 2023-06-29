@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+.container2 {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .form {
   background: #d2c1ab;
   display: flex;
@@ -28,6 +37,11 @@
   margin-bottom: .5rem;
   color: #4d4d4d;
   width: 100%;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .inputContainer {
@@ -54,7 +68,7 @@
   height: 6rem;
 }
 
-.submitBtn {
+.btn {
   padding: 10px;
   border: 2px solid #d2c1ab;
   border-radius: 10px;
@@ -65,4 +79,11 @@
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  margin-right: .5rem;
+}
+
+.btn:hover {
+  background: #d2c1ab;
+  color: #4d4d4d;
+  border: 2px solid #4d4d4d;
 }

@@ -27,6 +27,8 @@ const AddComment = ({ idObservation }: AddCommentProps) => {
     idObservation: null,
   })
 
+  const [shown, setShown] = useState<boolean>(false)
+
   useEffect(() => {
     if (user) {
       setComment({
@@ -59,22 +61,37 @@ const AddComment = ({ idObservation }: AddCommentProps) => {
   }
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Ajouter un commentaire</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.inputContainer}>
-          <label htmlFor="title">Titre</label>
-          <input type="text" name="title" id="title" value={comment.title} onChange={handleChange} required />
+    <>
+      {shown ? (
+        <div className={styles.container}>
+          <h2 className={styles.title}>Ajouter un commentaire</h2>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.inputContainer}>
+              <label htmlFor="title">Titre</label>
+              <input type="text" name="title" id="title" value={comment.title} onChange={handleChange} required />
+            </div>
+            <div className={styles.inputContainer}>
+              <label htmlFor="content">Commentaire</label>
+              <textarea name="content" id="content" value={comment.content} onChange={handleChange} required />
+            </div>
+            <div className={styles.btnContainer}>
+              <button className={styles.btn} type="submit">
+                Partager votre capyavis !
+              </button>
+              <button className={styles.btn} onClick={() => setShown(false)}>
+                Annuler
+              </button>
+            </div>
+          </form>
         </div>
-        <div className={styles.inputContainer}>
-          <label htmlFor="content">Commentaire</label>
-          <textarea name="content" id="content" value={comment.content} onChange={handleChange} required />
+      ) : (
+        <div className={styles.container2}>
+          <button className={styles.btn} onClick={() => setShown(true)}>
+            Ajouter un commentaire
+          </button>
         </div>
-        <button className={styles.submitBtn} type="submit">
-          Partager votre capyavis !
-        </button>
-      </form>
-    </div>
+      )}
+    </>
   )
 }
 

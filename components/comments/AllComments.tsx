@@ -29,7 +29,7 @@ const AllComments = ({ id }: AllCommentsProps) => {
       ) : (
         <div className={styles.commentsContainer}>
           <div className={styles.header}>
-            <h2 className={styles.title}>Comments</h2>
+            <h2 className={styles.title}>Commentaires</h2>
           </div>
           <hr className={styles.hr} />
           {comments.map((comment) => (
