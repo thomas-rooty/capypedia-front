@@ -90,3 +90,20 @@ export const getComments = async (id: string) => {
   const response = await fetch(`${apiUrl}/observations/${id}/comments`)
   return response.json()
 }
+
+/**
+ * Add a new comment
+ * @param {Comment} comment
+ * @param token
+ */
+export const addComment = async (comment: Comment, token: string | null) => {
+  const response = await fetch(`${apiUrl}/comments/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+    body: JSON.stringify(comment),
+  })
+  return response.json()
+}

@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  align-items: center;
+}
+
+.form {
+  background: #d2c1ab;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 1rem 5rem;
+  color: #4d4d4d;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.form > label {
+  font-family: "Lexend Regular", sans-serif;
+  text-transform: lowercase;
+}
+
+.title {
+  font-family: "Lexend Regular", sans-serif;
+  margin-bottom: .5rem;
+  color: #4d4d4d;
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.inputContainer > input,
+.inputContainer > textarea {
+  height: 3rem;
+  margin-bottom: .5rem;
+  border: 1px solid #cbcbcb;
+  background-color: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: #808080;
+  width: 100%;
+}
+
+.inputContainer > textarea {
+  height: 6rem;
+}
+
+.submitBtn {
+  padding: 10px;
+  border: 2px solid #d2c1ab;
+  border-radius: 10px;
+  background: var(--bg-primary);;
+  color: #4d4d4d;
+  font-family: "Lexend Regular", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}

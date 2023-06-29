@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import { useSearchParams } from 'next/navigation'
 import OneObservation from '@/components/observations/OneObservation'
 import AllComments from '@/components/comments/AllComments'
+import AddComment from '@/components/forms/comment/AddComment'
 
 const ObservationDetails = () => {
   const searchParams = useSearchParams()
@@ -13,6 +14,7 @@ const ObservationDetails = () => {
       {id && (
         <>
           <OneObservation id={id} />
+          <AddComment idObservation={Number(id)} />
           <AllComments id={id} />
         </>
       )}
