@@ -9,7 +9,7 @@ interface CardObservationProps {
 const CardObservation = ({ observation }: CardObservationProps) => {
   return (
     <div className={styles.card}>
-      <Link className={styles.link} href={`/observations/${observation.id}`} passHref>
+      <Link className={styles.link} href={`/observation?id=${observation.id}`} passHref>
         <img src={observation.image} className={styles.cardImage} alt={observation.title} />
         <div className={styles.cardInfo}>
           <h1 className={styles.title}>{observation.title}</h1>
