@@ -29,11 +29,11 @@ const OneObservation = ({ id }: OneObservationProps) => {
         observation && (
           <div>
             <h1>{observation.title}</h1>
-            <p>Behaviour : {observation.behaviour}</p>
-            <p>Approved : {observation.approved.toString()}</p>
-            <p>Created : {observation.createdAt}</p>
-            <p>place : {observation.place}</p>
-            <p>image : {observation.image}</p>
+            <img src={observation.image} className={styles.image} alt={observation.title} />
+            <p>{observation.behaviour}</p>
+            <div className={styles.observationContainer}>
+              <p>Observé à {observation.place}</p>
+            </div>
           </div>
         )
       )}

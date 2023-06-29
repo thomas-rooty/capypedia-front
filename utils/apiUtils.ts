@@ -107,3 +107,10 @@ export const addComment = async (comment: Comment, token: string | null) => {
   })
   return response.json()
 }
+
+/**
+ * Delete a comment
+ * @param {string} id
+ * @param token
+ * @returns {Promise<void>}
+ */
