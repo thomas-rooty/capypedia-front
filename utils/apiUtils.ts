@@ -109,8 +109,35 @@ export const addComment = async (comment: Comment, token: string | null) => {
 }
 
 /**
+ * Check a user role
+ * @param token
+ * @returns {Promise<status>}
+ */
+export const checkRole = async (token: string | null) => {
+  const response = await fetch(`${apiUrl}/user/role`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+  })
+  return response.json()
+}
+
+/**
  * Delete a comment
  * @param {string} id
  * @param token
  * @returns {Promise<void>}
  */
+export const deleteComment = async (id: string, token: string | null) => {
+  const response = await fetch(`${apiUrl}/comments`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+    body: JSON.stringify({ id }),
+  })
+  return response.json()
+}
