@@ -2,7 +2,7 @@
 import styles from './Comment.module.css'
 import { useState, useEffect } from 'react'
 import { Comment } from '@/utils/types/Comment'
-import { getUser, checkRole, deleteComment } from '@/utils/apiUtils'
+import { getUser, checkRole, deleteComment, editComment } from '@/utils/apiUtils'
 import { getUserData } from '@/utils/mutations/storageMutations'
 
 interface CommentProps {
@@ -10,6 +10,9 @@ interface CommentProps {
 }
 
 const CommentComponent = ({ comment }: CommentProps) => {
+  // Useful variables
+  const [isEditing, setIsEditing] = useState<boolean>(false)
+
   // Date to locale format
   const formattedDate = comment.createdDate ? new Date(comment.createdDate).toLocaleDateString() : ''
 
@@ -53,6 +56,23 @@ const CommentComponent = ({ comment }: CommentProps) => {
     window.location.reload()
   }
 
+  // Edit comment
+  const handleEdit = async () => {
+    const titleInput = document.querySelector(`.${styles.titleEditable}`) as HTMLInputElement
+    const contentTextarea = document.querySelector(`.${styles.contentEditable}`) as HTMLTextAreaElement
+
+    const editedComment = {
+      id: comment.id,
+      title: titleInput.value,
+      content: contentTextarea.value,
+      idUser: comment.idUser,
+      idObservation: comment.idObservation,
+    }
+
+    await editComment(editedComment, token, comment.id as string)
+    window.location.reload()
+  }
+
   return (
     <div className={styles.card}>
       {loading ? (
@@ -64,12 +84,25 @@ const CommentComponent = ({ comment }: CommentProps) => {
             <p className={styles.pseudo}>{username}</p>
             <p className={styles.date}>{formattedDate}</p>
           </div>
-          <div className={styles.right}>
-            <p className={styles.title}>{comment.title}</p>
-            <p>{comment.content}</p>
-          </div>
+          {!isEditing ? (
+            <div className={styles.right}>
+              <p className={styles.title}>{comment.title}</p>
+              <p>{comment.content}</p>
+            </div>
+          ) : (
+            <div className={styles.right}>
+              <input type="text" className={styles.titleEditable} defaultValue={comment.title} />
+              <textarea className={styles.contentEditable} defaultValue={comment.content} />
+            </div>
+          )}
           {userId === comment.idUser || role === 'admin' ? (
-            <img src="/icons/close.png" alt="delete" className={styles.delete} onClick={handleDelete} />
+            <>
+              <img src="/icons/edit.png" alt="edit" className={styles.edit} onClick={() => setIsEditing(!isEditing)} />
+              <img src="/icons/close.png" alt="delete" className={styles.delete} onClick={handleDelete} />
+              {isEditing && (
+                <img src="/icons/validate.png" alt="edit" className={styles.validate} onClick={handleEdit} />
+              )}
+            </>
           ) : null}
         </>
       )}

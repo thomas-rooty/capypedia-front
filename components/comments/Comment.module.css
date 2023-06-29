@@ -23,6 +23,12 @@
   padding-right: 1rem;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
 .avatar {
   width: 50px;
   height: 50px;
@@ -38,9 +44,32 @@
   color: #6c6c6c;
 }
 
-.title {
+.title,
+.titleEditable {
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+.titleEditable,
+.contentEditable {
+  height: fit-content;
+  border: 1px solid #cbcbcb;
+  background-color: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: #808080;
+  width: 100%;
+}
+
+.edit {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 10px;
+  right: 53px;
+  cursor: pointer;
 }
 
 .delete {
@@ -48,6 +77,15 @@
   height: 33px;
   position: absolute;
   top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.validate {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  bottom: 10px;
   right: 10px;
   cursor: pointer;
 }

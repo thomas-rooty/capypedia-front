@@ -141,3 +141,22 @@ export const deleteComment = async (id: string, token: string | null) => {
   })
   return response.json()
 }
+
+/**
+ * Edit a comment
+ * @param {Comment} comment
+ * @param token
+ * @param {string} id
+ * @returns {Promise<void>}
+ */
+export const editComment = async (comment: Comment, token: string | null, id: string) => {
+  const response = await fetch(`${apiUrl}/comments/`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+    body: JSON.stringify(comment),
+  })
+  return response.json()
+}
