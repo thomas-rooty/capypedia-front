@@ -37,6 +37,7 @@ const CommentComponent = ({ comment }: CommentProps) => {
             <p className={styles.date}>{formattedDate}</p>
           </div>
           <div className={styles.right}>
+            <p className={styles.title}>{comment.title}</p>
             <p>{comment.content}</p>
           </div>
         </>

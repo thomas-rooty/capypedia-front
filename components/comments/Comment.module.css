@@ -37,3 +37,8 @@
   font-style: italic;
   color: #6c6c6c;
 }
+
+.title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
