@@ -38,6 +38,9 @@ const Navbar = () => {
         <li className={pathname === '/observations' ? styles.active : ''}>
           <Link href='/observations'>Observations</Link>
         </li>
+        <li className={pathname === '/stats' ? styles.active : ''}>
+          <Link href='/stats'>Statistiques</Link>
+        </li>
         {!user ? (
           <>
             <li className={pathname === '/register' ? styles.active : ''}>

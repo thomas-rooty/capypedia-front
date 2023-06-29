@@ -178,3 +178,12 @@ export const editComment = async (comment: Comment, token: string | null, id: st
   })
   return response.json()
 }
+
+/**
+ * Get observations stats
+ * @returns {Promise<any>}
+ */
+export const getStats = async () => {
+  const response = await fetch(`${apiUrl}/stats/observations`)
+  return response.json()
+}
