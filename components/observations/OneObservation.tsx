@@ -22,18 +22,22 @@ const OneObservation = ({ id }: OneObservationProps) => {
   }, [id])
 
   return (
-    <main className={styles.main}>
+    <div className={styles.card}>
       {loading ? (
         <p>Loading...</p>
       ) : (
         observation && (
           <div>
             <h1>{observation.title}</h1>
-            <p>{observation.behaviour}</p>
+            <p>Behaviour : {observation.behaviour}</p>
+            <p>Approved : {observation.approved.toString()}</p>
+            <p>Created : {observation.createdAt}</p>
+            <p>place : {observation.place}</p>
+            <p>image : {observation.image}</p>
           </div>
         )
       )}
-    </main>
+    </div>
   )
 }
 

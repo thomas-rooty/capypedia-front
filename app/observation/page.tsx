@@ -9,7 +9,6 @@ const ObservationDetails = () => {
 
   return (
     <main className={styles.main}>
-      <h1>Observation</h1>
       {id && <OneObservation id={id} />}
     </main>
   )
