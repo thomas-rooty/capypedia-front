@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.commentsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+}
+
+.title {
+  font-family: "Lexend Regular", sans-serif;
+  width: 100%;
+  color: #4d4d4d;
+}
+
+.hr {
+  width: 70%;
+  height: 2px;
+  border-radius: 10px;
+  margin: 10px 0;
+}

@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  background: #d2c1ab;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 10px;
+  color: #4d4d4d;
+  font-family: "Lexend Regular", sans-serif;
+  width: 75%;
+  height: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}

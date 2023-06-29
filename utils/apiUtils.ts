@@ -1,5 +1,6 @@
 import { User } from '@/utils/types/User'
 import { Observation } from '@/utils/types/Observation'
+import { Comment } from '@/utils/types/Comment'
 
 const apiUrl = 'http://localhost:8000'
 
@@ -33,6 +34,17 @@ export const login = async (username: string, password: string) => {
 }
 
 /**
+ * Get a user by its id
+ * @param {string} id
+ * @returns {Promise<User>}
+ */
+export const getUser = async (id: number | null) => {
+  if (!id) return null
+  const response = await fetch(`${apiUrl}/user/${id}`)
+  return response.json()
+}
+
+/**
  * Get all observations
  * @returns {Promise<Observation[]>}
  */
@@ -62,9 +74,19 @@ export const addObservation = async (observation: Observation, token: string | n
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `token ${token}`,
+      Authorization: `token ${token}`,
     },
     body: JSON.stringify(observation),
   })
+  return response.json()
+}
+
+/**
+ * Get all comments of an observation
+ * @param {string} id
+ * @returns {Promise<Comment[]>}
+ */
+export const getComments = async (id: string) => {
+  const response = await fetch(`${apiUrl}/observations/${id}/comments`)
   return response.json()
 }
