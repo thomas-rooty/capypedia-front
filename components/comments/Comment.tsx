@@ -32,8 +32,9 @@ const CommentComponent = ({ comment }: CommentProps) => {
       ) : (
         <>
           <div className={styles.left}>
-            <p>{user}</p>
-            <p>{formattedDate}</p>
+            <img src="/icons/capybara.png" alt="avatar" className={styles.avatar} />
+            <p className={styles.pseudo}>{user}</p>
+            <p className={styles.date}>{formattedDate}</p>
           </div>
           <div className={styles.right}>
             <p>{comment.content}</p>
