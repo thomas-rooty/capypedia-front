@@ -10,7 +10,6 @@ const ReportCapy = () => {
 
   useEffect(() => {
     const { data } = getUserData()
-    console.log(data)
     setUser(data as User)
   }, [])
 

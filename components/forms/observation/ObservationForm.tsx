@@ -46,7 +46,6 @@ const ObservationForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const res = await addObservation(observation, token)
-    console.log(res)
     if (res.status === 200) {
       alert('Observation added!')
       window.location.href = '/observations'

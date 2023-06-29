@@ -14,7 +14,8 @@ const CommentComponent = ({ comment }: CommentProps) => {
   const formattedDate = comment.createdDate ? new Date(comment.createdDate).toLocaleDateString() : ''
 
   // Get user info from comment
-  const [user, setUser] = useState<string>('')
+  const [username, setUsername] = useState<string>('')
+  const [userId, setUserId] = useState<string | null>('')
   const [token, setToken] = useState<string | null>('')
   const [loading, setLoading] = useState<boolean>(true)
   const [role, setRole] = useState<string>('')
@@ -23,8 +24,9 @@ const CommentComponent = ({ comment }: CommentProps) => {
   useEffect(() => {
     const fetchUser = async () => {
       const user = await getUser(comment.idUser)
-      const { token } = await getUserData()
-      setUser(user.data)
+      const { data, token } = await getUserData()
+      setUsername(user.data)
+      setUserId(data?.id as unknown as string)
       setToken(token)
       setLoading(false)
     }
@@ -35,13 +37,10 @@ const CommentComponent = ({ comment }: CommentProps) => {
   useEffect(() => {
     const fetchRole = async () => {
       const res = await checkRole(token)
-      console.log(res)
       if (res.status === 401) {
-        console.log(res)
         setRole('user')
       }
       if (res.status === 200) {
-        console.log(res)
         setRole('admin')
       }
     }
@@ -62,16 +61,16 @@ const CommentComponent = ({ comment }: CommentProps) => {
         <>
           <div className={styles.left}>
             <img src="/icons/capybara.png" alt="avatar" className={styles.avatar} />
-            <p className={styles.pseudo}>{user}</p>
+            <p className={styles.pseudo}>{username}</p>
             <p className={styles.date}>{formattedDate}</p>
           </div>
           <div className={styles.right}>
             <p className={styles.title}>{comment.title}</p>
             <p>{comment.content}</p>
           </div>
-          {role === 'admin' && (
+          {userId === comment.idUser || role === 'admin' ? (
             <img src="/icons/close.png" alt="delete" className={styles.delete} onClick={handleDelete} />
-          )}
+          ) : null}
         </>
       )}
     </div>

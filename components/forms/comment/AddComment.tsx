@@ -48,10 +48,7 @@ const AddComment = ({ idObservation }: AddCommentProps) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(comment)
-    console.log(token)
     const res = await addComment(comment, token)
-    console.log(res)
     if (res.status === 200) {
       alert('Commentaire ajouté!')
       window.location.href = '/observation?id=' + idObservation

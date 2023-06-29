@@ -26,7 +26,6 @@ const Register = () => {
     const res = await register(user)
     if (res.status === 200) {
       setSuccess(true)
-      console.log(res)
       setUserData(res)
     } else {
       setError(res.message)
