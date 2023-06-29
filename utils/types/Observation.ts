@@ -7,5 +7,5 @@ export type Observation = {
   image: string
   approved: boolean
   createdAt?: string
-  idUser: number
+  idUser: number | null
 }

@@ -11,6 +11,7 @@
   z-index: 10000;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 3rem;
+  margin: 1rem;
+  gap: 3rem;
   justify-items: center;
 }

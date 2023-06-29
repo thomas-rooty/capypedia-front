@@ -15,10 +15,6 @@ const ObservationForm = () => {
     const { data, token } = getUserData()
     setUser(data as User)
     setToken(token)
-    setObservation({
-      ...observation,
-      idUser: user?.id as number,
-    })
   }, [])
 
   const [observation, setObservation] = useState<Observation>({
@@ -28,8 +24,17 @@ const ObservationForm = () => {
     behaviour: '',
     image: '',
     approved: false,
-    idUser: user?.id as number,
+    idUser: null,
   })
+
+  useEffect(() => {
+    if (user) {
+      setObservation({
+        ...observation,
+        idUser: user.id as number,
+      })
+    }
+  }, [user])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setObservation({
@@ -41,17 +46,18 @@ const ObservationForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const res = await addObservation(observation, token)
+    console.log(res)
     if (res.status === 200) {
-      alert('Observation ajoutée !')
+      alert('Observation added!')
       window.location.href = '/observations'
     } else {
-      alert('Une erreur est survenue')
+      alert('An error occurred')
     }
   }
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <h1>Ajouter une observation</h1>
+      <h1>Add an Observation</h1>
       <input
         className={styles.input}
         required
@@ -98,7 +104,7 @@ const ObservationForm = () => {
         onChange={handleChange}
       />
       <button className={styles.submitBtn} type="submit">
-        Ajouter
+        Add
       </button>
     </form>
   )
