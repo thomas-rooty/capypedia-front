@@ -1,5 +1,5 @@
 import styles from './StatsObservations.module.css'
-import { getStats } from '@/utils/apiUtils'
+import { getObservationStats } from '@/utils/apiUtils'
 import { useState, useEffect } from 'react'
 import Chart from 'chart.js/auto'
 import 'chartjs-adapter-date-fns'
@@ -8,7 +8,7 @@ const StatsObservations = () => {
   const [stats, setStats] = useState<any>(null)
 
   const fetchStats = async () => {
-    const res = await getStats()
+    const res = await getObservationStats()
     if (res.status !== 200) return
     setStats(res.data)
 

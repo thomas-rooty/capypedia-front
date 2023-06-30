@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 25%;
+  width: 30%;
+  height: auto;
   margin-bottom: 2rem;
   z-index: 2;
 }

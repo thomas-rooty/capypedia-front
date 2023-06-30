@@ -201,7 +201,25 @@ export const editComment = async (comment: Comment, token: string | null, id: st
  * Get observations stats
  * @returns {Promise<any>}
  */
-export const getStats = async () => {
+export const getObservationStats = async () => {
   const response = await fetch(`${apiUrl}/stats/observations`)
+  return response.json()
+}
+
+/**
+ * Get comments stats
+ * @returns {Promise<any>}
+ */
+export const getCommentStats = async () => {
+  const response = await fetch(`${apiUrl}/stats/comments`)
+  return response.json()
+}
+
+/**
+ * Get approved stats
+ * @returns {Promise<any>}
+ */
+export const getApprovedStats = async () => {
+  const response = await fetch(`${apiUrl}/stats/approved`)
   return response.json()
 }
