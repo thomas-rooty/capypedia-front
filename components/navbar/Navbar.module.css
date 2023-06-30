@@ -8,7 +8,7 @@
   width: 100%;
   height: 6rem;
   background: rgba(234, 226, 215, 0.8);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #bcb4ac;
 }
 
 .logoContainer {
@@ -64,6 +64,6 @@
 
 .active {
   color: #4d4d4d!important;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #bcb4ac;
   transform: translateY(2px);
 }
