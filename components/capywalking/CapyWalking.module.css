@@ -3,6 +3,7 @@
   bottom: 0;
   width: 100%;
   animation: capyWalking 10s linear infinite;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Animation that makes capybara go from right to left */
@@ -18,4 +19,10 @@
 .capyGif {
   width: 200px;
   height: auto;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.capyGif:hover {
+  transform: scale(1.2) translateY(-10px);
 }
