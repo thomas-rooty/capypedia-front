@@ -143,6 +143,24 @@ export const checkRole = async (token: string | null) => {
 }
 
 /**
+ * Edit a user
+ * @param {} user
+ * @param token
+ * @returns {Promise<User>}
+ */
+export const editUser = async (user: {}, token: string | null) => {
+  const response = await fetch(`${apiUrl}/user/changes`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+    body: JSON.stringify(user),
+  })
+  return response.json()
+}
+
+/**
  * Delete a comment
  * @param {string} id
  * @param token

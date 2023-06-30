@@ -25,6 +25,7 @@ const Login = () => {
     const res = await login(user.username, user.password)
     if (res.status !== 200) {
       setError(res.message)
+      alert('Mauvais identifiants')
       return
     }
 

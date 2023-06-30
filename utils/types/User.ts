@@ -4,4 +4,5 @@ export type User = {
   email: string
   password: string
   date_joined?: string
+  is_staff?: boolean
 }

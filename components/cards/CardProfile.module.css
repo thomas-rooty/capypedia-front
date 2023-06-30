@@ -21,3 +21,44 @@
   border: 2px solid #b8aa96;
   background: #d2c1ab;
 }
+
+.cardBodyItemInputs{
+  margin-top: 1rem;
+  border-top: 2px solid #808080;
+  padding-top: 1rem;
+}
+
+.cardBodyItemInput {
+  margin-bottom: .5rem;
+  border: 1px solid #cbcbcb;
+  background-color: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: #808080;
+  width: 100%;
+}
+
+.submitBtn {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-family: "Lexend Regular", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #d2c1ab;
+  color: #fff;
+  border: 3px solid #b8aa96;
+}
+
+.submitBtn:hover {
+  background: #b8aa96;
+  color: #4d4d4d;
+  border: 3px solid #d2c1ab;
+}
