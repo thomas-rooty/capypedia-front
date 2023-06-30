@@ -56,13 +56,13 @@ const ObservationForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <h1>Add an Observation</h1>
+      <h1>Partager votre expérience</h1>
       <input
         className={styles.input}
         required
         type="text"
         name="title"
-        placeholder="Title"
+        placeholder="Titre"
         value={observation.title}
         onChange={handleChange}
       />
@@ -71,7 +71,7 @@ const ObservationForm = () => {
         required
         type="date"
         name="date"
-        placeholder="Date"
+        placeholder="Date d'observation"
         value={observation.date}
         onChange={handleChange}
       />
@@ -80,7 +80,7 @@ const ObservationForm = () => {
         required
         type="text"
         name="place"
-        placeholder="Place"
+        placeholder="Localisation"
         value={observation.place}
         onChange={handleChange}
       />
@@ -89,7 +89,7 @@ const ObservationForm = () => {
         required
         type="text"
         name="behaviour"
-        placeholder="Behaviour"
+        placeholder="Comportement observé"
         value={observation.behaviour}
         onChange={handleChange}
       />
@@ -98,7 +98,7 @@ const ObservationForm = () => {
         required
         type="text"
         name="image"
-        placeholder="Image"
+        placeholder="Image jointe"
         value={observation.image}
         onChange={handleChange}
       />

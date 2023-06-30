@@ -19,6 +19,7 @@
 .form > h1 {
   font-family: "Lexend Regular", sans-serif;
   margin-bottom: 2rem;
+  text-align: center;
   color: #4d4d4d;
   width: 100%;
 }
