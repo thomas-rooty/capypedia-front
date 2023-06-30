@@ -53,17 +53,19 @@
   font-weight: bold;
   text-transform: lowercase;
   margin: 0 .5rem;
-  transition: all .3s ease;
+  transition: all .5s ease-in-out;
   padding: 5px 10px;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
 }
 
 .navlinks > li:hover {
   transform: translateY(-3px);
+  border-bottom: 1px solid #bcb4ac;
 }
 
 .active {
   color: #4d4d4d!important;
-  border-bottom: 2px solid #bcb4ac;
+  border-bottom: 3px solid #bcb4ac;
   transform: translateY(2px);
 }
