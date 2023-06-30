@@ -207,6 +207,23 @@ export const getObservationStats = async () => {
 }
 
 /**
+ * Delete an observation
+ * @param {string} id
+ * @param token
+ */
+export const deleteObservation = async (id: string, token: string | null) => {
+  const response = await fetch(`${apiUrl}/observations/changes`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `token ${token}`,
+    },
+    body: JSON.stringify({ id }),
+  })
+  return response.json()
+}
+
+/**
  * Get comments stats
  * @returns {Promise<any>}
  */

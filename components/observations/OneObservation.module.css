@@ -30,3 +30,22 @@
   text-transform: lowercase;
   font-style: italic;
 }
+
+.deleteButton {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: auto;
+  background: #d2c1ab;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.deleteButton:hover {
+  background: #bbac98;
+  transform: scale(1.1);
+}
